@@ -10,6 +10,10 @@
 [![LightGBM](https://img.shields.io/badge/LightGBM-4.0-green.svg)](https://lightgbm.readthedocs.io)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0-EE4C2C.svg)](https://pytorch.org)
 [![Tests Passing](https://img.shields.io/badge/tests-19%20passed-brightgreen.svg)]()
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-00f2fe?style=flat&logo=github)](https://jashanpreetsingh07.github.io/Cinema_Ticket_Demand_Forecasting/)
+
+> 🌐 **Live Interactive Web Platform:** **[https://jashanpreetsingh07.github.io/Cinema_Ticket_Demand_Forecasting/](https://jashanpreetsingh07.github.io/Cinema_Ticket_Demand_Forecasting/)**  
+> *Access the complete multiplex operations suite live online: Dual-Demand Forecaster, Twin-Auditorium Visualizer, Master Schedule with CSV Export, 1-Click Screen Swap Optimizer, and Dynamic Price Elasticity Studio.*
 
 ---
 
@@ -211,6 +215,7 @@ When filling out your official assignment submission form, use the verified info
 | **Internship Role** | `AI & Machine Learning` |
 | **Assigned Project Title** | `Cinema Ticket Demand Forecasting` |
 | **Repository URL** | `https://github.com/JashanpreetSingh07/Cinema_Ticket_Demand_Forecasting` |
+| **Live Demonstration URL** | `https://jashanpreetsingh07.github.io/Cinema_Ticket_Demand_Forecasting/` |
 | **Primary Branch & Commit ID** | `master` (Commit ID: `918c7e34b6d56c1f2fa199bce1e3c58128d171d5`) |
 | **Dataset Source / License** | `Kaggle Cinema Tickets Benchmark (142,524 show-level rows; CC0 Public Domain). Filtered corrupt negative capacities and quarantined contemporaneous sales targets.` |
 | **Target Variable & Horizon** | `Show-level absolute tickets sold bounded in [0, screen_capacity] and true unconstrained demand. Forecast horizon: T-3 days (72 hours prior to showtime).` |
