@@ -1,12 +1,12 @@
 import React from "react";
-import { 
-  Film, 
-  Calendar, 
-  Zap, 
-  DollarSign, 
-  ShieldCheck, 
-  MapPin, 
-  Terminal, 
+import {
+  Film,
+  Calendar,
+  Zap,
+  DollarSign,
+  ShieldCheck,
+  MapPin,
+  Terminal,
   Sparkles,
   ExternalLink,
   ChevronDown
@@ -22,43 +22,43 @@ export default function Navbar({
   setSelectedDate,
   apiOnline,
 }) {
-  const isLocalhost = typeof window !== 'undefined' && 
+  const isLocalhost = typeof window !== 'undefined' &&
     (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
 
-  const docsUrl = isLocalhost 
-    ? "http://127.0.0.1:8000/docs" 
+  const docsUrl = isLocalhost
+    ? "http://127.0.0.1:8000/docs"
     : "https://github.com/JashanpreetSingh07/Cinema_Ticket_Demand_Forecasting#4-api-endpoints";
 
   const tabs = [
-    { 
-      id: "forecast", 
-      label: "Forecaster", 
+    {
+      id: "forecast",
+      label: "Forecaster",
       tag: "Dual Demand",
-      icon: Film 
+      icon: Film
     },
-    { 
-      id: "schedule", 
-      label: "Master Schedule", 
+    {
+      id: "schedule",
+      label: "Master Schedule",
       tag: "5-Screen Grid",
-      icon: Calendar 
+      icon: Calendar
     },
-    { 
-      id: "optimizer", 
-      label: "AI Optimizer", 
+    {
+      id: "optimizer",
+      label: "AI Optimizer",
       tag: "Hall Reallocation",
-      icon: Zap 
+      icon: Zap
     },
-    { 
-      id: "pricing", 
-      label: "Pricing Studio", 
+    {
+      id: "pricing",
+      label: "Pricing Studio",
       tag: "Elasticity Curve",
-      icon: DollarSign 
+      icon: DollarSign
     },
-    { 
-      id: "governance", 
-      label: "Audit & Models", 
+    {
+      id: "governance",
+      label: "Audit & Models",
       tag: "19/19 Tests",
-      icon: ShieldCheck 
+      icon: ShieldCheck
     },
   ];
 
@@ -68,12 +68,12 @@ export default function Navbar({
       <div className="h-[2.5px] w-full bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 shadow-[0_0_12px_rgba(6,182,212,0.8)]" />
 
       <div className="max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
-        
+
         {/* TIER 1: Brand & Executive Operations Controls Bar */}
         <div className="flex flex-wrap items-center justify-between gap-3 py-2.5 border-b border-white/10">
-          
+
           {/* Brand & Platform Identity */}
-          <button 
+          <button
             onClick={() => setActiveTab("forecast")}
             className="flex items-center gap-3 text-left group focus:outline-none cursor-pointer"
             title="Return to Single-Show Forecaster"
@@ -104,7 +104,7 @@ export default function Navbar({
 
           {/* Operations Controls (Cinema Selector + Date + Status + Docs) */}
           <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-            
+
             {/* Multiplex Location Selector */}
             <div className="flex items-center bg-slate-900/90 border border-white/15 rounded-lg px-2.5 py-1.5 hover:border-cyan-500/50 transition-colors shadow-sm">
               <MapPin className="w-3.5 h-3.5 text-cyan-400 mr-1.5 flex-shrink-0" />
@@ -142,12 +142,11 @@ export default function Navbar({
             </div>
 
             {/* Engine Status Badge */}
-            <div 
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold border shadow-sm ${
-                apiOnline
+            <div
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold border shadow-sm ${apiOnline
                   ? "bg-emerald-500/15 border-emerald-500/40 text-emerald-300 shadow-emerald-500/10"
                   : "bg-cyan-500/15 border-cyan-500/40 text-cyan-300 shadow-cyan-500/10"
-              }`}
+                }`}
               title={apiOnline ? "FastAPI Inference Microservice Connected (127.0.0.1:8000)" : "Cloud-Calibrated ML Engine Active (Ensemble GBDT + PyTorch TabNet)"}
             >
               <span className={`w-2 h-2 rounded-full ${apiOnline ? "bg-emerald-400 animate-pulse shadow-[0_0_8px_#10b981]" : "bg-cyan-400 shadow-[0_0_8px_#00f2fe]"}`} />
@@ -176,7 +175,7 @@ export default function Navbar({
 
         {/* TIER 2: 100% VISIBLE Segmented Navigation Bar (All 5 Tabs Always Visible) */}
         <div className="py-2 sm:py-2.5">
-          <nav 
+          <nav
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1.5 sm:gap-2 w-full"
             role="tablist"
           >
@@ -189,11 +188,10 @@ export default function Navbar({
                   onClick={() => setActiveTab(tab.id)}
                   role="tab"
                   aria-selected={isActive}
-                  className={`flex items-center justify-center sm:justify-start gap-2 px-3 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
-                    isActive
+                  className={`flex items-center justify-center sm:justify-start gap-2 px-3 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer border ${isActive
                       ? "bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-600 text-black border-cyan-300 shadow-lg shadow-cyan-500/30 scale-[1.01] font-black"
                       : "bg-slate-900/80 border-white/10 text-slate-300 hover:text-white hover:bg-slate-800/80 hover:border-white/25 shadow-sm"
-                  }`}
+                    }`}
                   title={`${tab.label} — ${tab.tag}`}
                 >
                   <Icon className={`w-4 h-4 flex-shrink-0 ${isActive ? "text-black stroke-[2.5]" : "text-cyan-400"}`} />
