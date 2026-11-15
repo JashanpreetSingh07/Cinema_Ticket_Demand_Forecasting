@@ -1,0 +1,134 @@
+{
+  "1. Baseline (Moving Avg)": {
+    "overall": {
+      "mae": 94.12,
+      "rmse": 190.14,
+      "wape_pct": 74.89,
+      "occupancy_mae_pct": 13.61,
+      "under_allocation_tickets": 1078756,
+      "over_allocation_tickets": 1003601
+    },
+    "cold_start": {
+      "mae": 167.42,
+      "rmse": 314.56,
+      "wape_pct": 65.54,
+      "occupancy_mae_pct": 17.99,
+      "under_allocation_tickets": 108354,
+      "over_allocation_tickets": 26254,
+      "sample_count": 804
+    },
+    "mature": {
+      "mae": 91.35,
+      "rmse": 183.81,
+      "wape_pct": 75.64,
+      "occupancy_mae_pct": 13.45,
+      "under_allocation_tickets": 970402,
+      "over_allocation_tickets": 977347,
+      "sample_count": 21321
+    },
+    "peak_days": {
+      "mae": 129.13,
+      "rmse": 239.08,
+      "wape_pct": 69.48,
+      "occupancy_mae_pct": 18.45,
+      "under_allocation_tickets": 652255,
+      "over_allocation_tickets": 628461
+    },
+    "offpeak_days": {
+      "mae": 65.67,
+      "rmse": 138.15,
+      "wape_pct": 85.53,
+      "occupancy_mae_pct": 9.68,
+      "under_allocation_tickets": 426501,
+      "over_allocation_tickets": 375140
+    }
+  },
+  "2. LightGBM Regressor": {
+    "overall": {
+      "mae": 54.39,
+      "rmse": 119.84,
+      "wape_pct": 43.28,
+      "occupancy_mae_pct": 9.19,
+      "under_allocation_tickets": 955750,
+      "over_allocation_tickets": 247591
+    },
+    "cold_start": {
+      "mae": 165.97,
+      "rmse": 294.49,
+      "wape_pct": 64.97,
+      "occupancy_mae_pct": 18.2,
+      "under_allocation_tickets": 130363,
+      "over_allocation_tickets": 3079,
+      "sample_count": 804
+    },
+    "mature": {
+      "mae": 50.18,
+      "rmse": 107.86,
+      "wape_pct": 41.55,
+      "occupancy_mae_pct": 8.85,
+      "under_allocation_tickets": 825387,
+      "over_allocation_tickets": 244512,
+      "sample_count": 21321
+    },
+    "peak_days": {
+      "mae": 74.12,
+      "rmse": 147.78,
+      "wape_pct": 39.88,
+      "occupancy_mae_pct": 11.91,
+      "under_allocation_tickets": 613615,
+      "over_allocation_tickets": 121500
+    },
+    "offpeak_days": {
+      "mae": 38.36,
+      "rmse": 91.03,
+      "wape_pct": 49.96,
+      "occupancy_mae_pct": 6.98,
+      "under_allocation_tickets": 342135,
+      "over_allocation_tickets": 126091
+    }
+  },
+  "3. PyTorch TabularNet": {
+    "overall": {
+      "mae": 59.89,
+      "rmse": 146.22,
+      "wape_pct": 47.65,
+      "occupancy_mae_pct": 9.58,
+      "under_allocation_tickets": 979218,
+      "over_allocation_tickets": 345798
+    },
+    "cold_start": {
+      "mae": 199.29,
+      "rmse": 383.46,
+      "wape_pct": 78.01,
+      "occupancy_mae_pct": 19.81,
+      "under_allocation_tickets": 157799,
+      "over_allocation_tickets": 2430,
+      "sample_count": 804
+    },
+    "mature": {
+      "mae": 54.63,
+      "rmse": 129.0,
+      "wape_pct": 45.23,
+      "occupancy_mae_pct": 9.2,
+      "under_allocation_tickets": 821419,
+      "over_allocation_tickets": 343368,
+      "sample_count": 21321
+    },
+    "peak_days": {
+      "mae": 83.14,
+      "rmse": 184.93,
+      "wape_pct": 44.74,
+      "occupancy_mae_pct": 12.55,
+      "under_allocation_tickets": 679733,
+      "over_allocation_tickets": 144850
+    },
+    "offpeak_days": {
+      "mae": 41.0,
+      "rmse": 104.71,
+      "wape_pct": 53.39,
+      "occupancy_mae_pct": 7.17,
+      "under_allocation_tickets": 299485,
+      "over_allocation_tickets": 200948
+    }
+  }
+}
