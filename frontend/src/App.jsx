@@ -14,8 +14,16 @@ export default function App() {
   const [selectedDate, setSelectedDate] = useState("2024-11-22");
   const [apiOnline, setApiOnline] = useState(false);
 
-  // Poll backend health
+  // Poll backend health (only when running on localhost to avoid HTTPS mixed-content warnings)
   useEffect(() => {
+    const isLocalhost = typeof window !== 'undefined' && 
+      (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+
+    if (!isLocalhost) {
+      setApiOnline(false);
+      return;
+    }
+
     const checkHealth = async () => {
       try {
         const res = await fetch("http://127.0.0.1:8000/health", { method: "GET" });

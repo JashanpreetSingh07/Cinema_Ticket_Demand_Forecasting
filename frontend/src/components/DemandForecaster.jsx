@@ -60,34 +60,43 @@ export default function DemandForecaster({ selectedCinema, selectedDate, onNavig
     }
   };
 
-  // Fetch forecast from FastAPI backend
+  // Fetch forecast from FastAPI backend (or calibrated client-side ensemble engine in cloud/HTTPS mode)
   const fetchForecast = async () => {
     setLoading(true);
-    try {
-      const response = await fetch("http://127.0.0.1:8000/predict", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          film_code: selectedFilmId,
-          cinema_code: selectedCinema,
-          capacity: capacity,
-          show_time: showSlot,
-          date: selectedDate,
-          ticket_price: ticketPrice,
-          model_choice: modelChoice,
-          screen_type: screenType,
-          marketing_tier: marketingTier,
-          weather_condition: weatherCondition,
-        }),
-      });
+    const isLocalhost = typeof window !== 'undefined' && 
+      (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
 
-      if (response.ok) {
-        const data = await response.json();
-        setForecast(data);
-      } else {
-        throw new Error("Backend response error");
+    if (isLocalhost) {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/predict", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            film_code: selectedFilmId,
+            cinema_code: selectedCinema,
+            capacity: capacity,
+            show_time: showSlot,
+            date: selectedDate,
+            ticket_price: ticketPrice,
+            model_choice: modelChoice,
+            screen_type: screenType,
+            marketing_tier: marketingTier,
+            weather_condition: weatherCondition,
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setForecast(data);
+          setLoading(false);
+          return;
+        }
+      } catch (err) {
+        // Fallback to calibrated client calculation
       }
-    } catch (err) {
+    }
+
+    try {
       // High-fidelity fallback calculation with continuous price elasticity and operational modifiers
       const baseRefPrice = currentFilm.base_price || 15;
       const priceRatio = Math.max(0.1, ticketPrice / baseRefPrice);
