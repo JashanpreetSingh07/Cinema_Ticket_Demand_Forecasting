@@ -151,9 +151,10 @@ The system translates raw predictions into four actionable cinema management dec
 ### 9.1 Deployed Services
 1. **Modern React Web Platform (`frontend/`):**
    - Built with React 19, Vite, and Tailwind CSS.
-   - Comprehensive multi-view multiplex suite: Single-Show Forecaster with 2D seating grids, Master Daily Schedule with CSV export, 1-Click Hungarian Screen Swap Optimizer, and Dynamic Price Elasticity Studio.
+   - **Public Live Production URL:** [https://jashanpreetsingh07.github.io/Cinema_Ticket_Demand_Forecasting/](https://jashanpreetsingh07.github.io/Cinema_Ticket_Demand_Forecasting/)
+   - Comprehensive multi-view multiplex suite: Single-Show Forecaster with 2D seating grids, Master Daily Schedule with CSV export, 1-Click Screen Swap Optimizer, and Dynamic Price Elasticity Studio.
 2. **FastAPI Backend Microservice (`src/api/app.py`):**
-   - Endpoints: `GET /health`, `POST /predict`, `POST /reallocate-screens`.
+   - Endpoints: `GET /health`, `POST /predict`, `POST /batch-forecast`, `POST /reallocate-screens`.
    - Asynchronous request handling, Pydantic V2 input validation, CORS enabled, OpenAPI/Swagger docs at `http://127.0.0.1:8000/docs`.
 3. **Streamlit Operations Dashboard (`dashboard/streamlit_app.py`):**
    - Python-native operations workbench with twin auditorium visualizer and operational controls.
@@ -188,6 +189,7 @@ All 19 automated tests pass with 0 warnings:
 ---
 
 ## 12. Verification & Submission Sign-Off
-- **Primary Repository:** `E:\New folder\cinema_demand_forecasting`
+- **Primary Repository:** `https://github.com/JashanpreetSingh07/Cinema_Ticket_Demand_Forecasting`
+- **Live Interactive Web Platform:** `https://jashanpreetsingh07.github.io/Cinema_Ticket_Demand_Forecasting/`
 - **Trained Artifacts:** `artifacts/lightgbm_model.pkl`, `artifacts/torch_model.pt`, `artifacts/baseline_model.pkl`, `artifacts/metrics_summary.json`
 - **Test Suite Status:** 19 passed in 9.71s (100% passing).
